@@ -49,19 +49,19 @@
 																<table>
 																	<tr>
 																		<td>Введите ширину стены </td>
-																		<td><input type="text" id="a" value="" placeholder="укажите ширину стен"></td>
+																		<td><input type="text" onfocus="javascript:if(this.value='text') this.value=''" id="a" placeholder="укажите ширину стен"></td>
 																	</tr>
 																	<tr>
 																		<td>Введите высоту стены </td>
-																		<td><input type="text" id="b" value="" placeholder="укажите высоту стен"></td>
+																		<td><input type="text" id="b" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите высоту стен"></td>
 																	</tr>
 																	<tr>
 																		<td>Введите ширину рулона </td>
-																		<td><input type="text" id="aroll" value="" placeholder="укажите ширину рулона"></td>
+																		<td><input type="text" id="aroll" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите ширину рулона"></td>
 																	</tr>
 																	<tr>
 																		<td>Введите длину рулона </td>
-																		<td><input type="text" id="broll" value="" placeholder="укажите длину рулона"></td>
+																		<td><input type="text" id="broll" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите длину рулона"></td>
 																	</tr>
 																	<tr>
 																		<td></td>
@@ -72,7 +72,30 @@
 																		<td><div id="val"></div></td>
 																	</tr>
 																</table>
-																<script src="calc.js"></script>
+																<script>
+																	function raschitat() {
+																		let a  = document.getElementById('a').value;
+																		let b  = document.getElementById('b').value;
+																		let broll  = document.getElementById('broll').value;
+																		let aroll  = document.getElementById('aroll').value;
+																		if(a == ""){
+																			alert("Вы не указали ширину");
+																			} else if(b == ""){
+																				alert("Вы не указали длину");
+																				} else if (aroll == "") {
+																					alert("Вы не указали ширину рулона");
+																					} else if (broll == "") {
+																						alert("Вы не указали длину рулона");
+																						} else {
+																							let price = 220;
+																							let quantity = Math.ceil(((a / aroll) * b) / broll);
+																							document.getElementById('quantity').innerHTML = "Вам понадобится: "+ quantity + " рулонов обоев";
+
+																							let val = quantity*price;
+																							document.getElementById('val').innerHTML = "Стоимость равна: "+ val +" р.";
+																						}
+																	}
+																</script>
 															</div>
 														</div>
 													</div>
@@ -90,30 +113,54 @@
 															<table>
 																<tr>
 																	<td>Введите ширину стены </td>
-																	<td><input type="text" id="a" value="" placeholder="укажите ширину стен"></td>
+																	<td><input type="text" id="a1" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите ширину стен"></td>
 																</tr>
 																<tr>
 																	<td>Введите высоту стены </td>
-																	<td><input type="text" id="b" value="" placeholder="укажите высоту стен"></td>
+																	<td><input type="text" id="b1" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите высоту стен"></td>
 																</tr>
 																<tr>
 																	<td>Введите ширину рулона </td>
-																	<td><input type="text" id="aroll" value="" placeholder="укажите ширину рулона"></td>
+																	<td><input type="text" id="aroll1" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите ширину рулона"></td>
 																</tr>
 																<tr>
 																	<td>Введите длину рулона </td>
-																	<td><input type="text" id="broll" value="" placeholder="укажите длину рулона"></td>
+																	<td><input type="text" id="broll1" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите длину рулона"></td>
 																</tr>
 																<tr>
 																	<td></td>
-																	<td><button onClick="raschitat();">Рассчитать</button></td>
+																	<td><button onClick="raschitat1();">Рассчитать</button></td>
 																</tr>
 																<tr>
-																	<td><div id="quantity"></div></td>
-																	<td><div id="val"></div></td>
+																	<td><div id="quantity1"></div></td>
+																	<td><div id="val1"></div></td>
 																</tr>
 															</table>
-															<script src="calc.js"></script>
+															<script>
+																function raschitat1() {
+																		let a1  = document.getElementById('a1').value;
+																		let b1  = document.getElementById('b1').value;
+																		let broll1  = document.getElementById('broll1').value;
+																		let aroll1  = document.getElementById('aroll1').value;
+																		if(a1 == ""){
+																			alert("Вы не указали ширину");
+																			} else if(b1 == ""){
+																				alert("Вы не указали длину");
+																				} else if (aroll1 == "") {
+																					alert("Вы не указали ширину рулона");
+																					} else if (broll1 == "") {
+																						alert("Вы не указали длину рулона");
+																						} else {
+																							let price1 = 210;
+																							let quantity1 = Math.ceil(((a1 / aroll1) * b1) / broll1);
+																							document.getElementById('quantity1').innerHTML = "Вам понадобится: "+ quantity1 + " рулонов обоев";
+
+																							let val1 = quantity1*price1;
+																							document.getElementById('val1').innerHTML = "Стоимость равна: "+ val1 +" р.";
+																						}
+																	}
+															
+															</script>
 														</div>
 													</div>
 												</div>
@@ -130,30 +177,53 @@
 															<table>
 																<tr>
 																	<td>Введите ширину стены </td>
-																	<td><input type="text" id="a" value="" placeholder="укажите ширину стен"></td>
+																	<td><input type="text" id="a2" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите ширину стен"></td>
 																</tr>
 																<tr>
 																	<td>Введите высоту стены </td>
-																	<td><input type="text" id="b" value="" placeholder="укажите высоту стен"></td>
+																	<td><input type="text" id="b2" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите высоту стен"></td>
 																</tr>
 																<tr>
 																	<td>Введите ширину рулона </td>
-																	<td><input type="text" id="aroll" value="" placeholder="укажите ширину рулона"></td>
+																	<td><input type="text" id="aroll2" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите ширину рулона"></td>
 																</tr>
 																<tr>
 																	<td>Введите длину рулона </td>
-																	<td><input type="text" id="broll" value="" placeholder="укажите длину рулона"></td>
+																	<td><input type="text" id="broll2" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите длину рулона"></td>
 																</tr>
 																<tr>
 																	<td></td>
-																	<td><button onClick="raschitat();">Рассчитать</button></td>
+																	<td><button onClick="raschitat2();">Рассчитать</button></td>
 																</tr>
 																<tr>
-																	<td><div id="quantity"></div></td>
-																	<td><div id="val"></div></td>
+																	<td><div id="quantity2"></div></td>
+																	<td><div id="val2"></div></td>
 																</tr>
 															</table>
-															<script src="calc.js"></script>
+															<script>
+																function raschitat2() {
+																		let a2  = document.getElementById('a2').value;
+																		let b2  = document.getElementById('b2').value;
+																		let broll2  = document.getElementById('broll2').value;
+																		let aroll2  = document.getElementById('aroll2').value;
+																		if(a2 == ""){
+																			alert("Вы не указали ширину");
+																			} else if(b2 == ""){
+																				alert("Вы не указали длину");
+																				} else if (aroll2 == "") {
+																					alert("Вы не указали ширину рулона");
+																					} else if (broll2 == "") {
+																						alert("Вы не указали длину рулона");
+																						} else {
+																							let price2 = 240;
+																							let quantity2 = Math.ceil(((a2 / aroll2) * b2) / broll2);
+																							document.getElementById('quantity2').innerHTML = "Вам понадобится: "+ quantity2 + " рулонов обоев";
+
+																							let val2 = quantity2*price2;
+																							document.getElementById('val2').innerHTML = "Стоимость равна: "+ val2 +" р.";
+																						}
+																	}
+															</script>
 														</div>
 													</div>
 												</div>
@@ -173,30 +243,53 @@
 																<table>
 																	<tr>
 																		<td>Введите ширину стены </td>
-																		<td><input type="text" id="a" value="" placeholder="укажите ширину стен"></td>
+																		<td><input type="text" id="a3" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите ширину стен"></td>
 																	</tr>
 																	<tr>
 																		<td>Введите высоту стены </td>
-																		<td><input type="text" id="b" value="" placeholder="укажите высоту стен"></td>
+																		<td><input type="text" id="b3" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите высоту стен"></td>
 																	</tr>
 																	<tr>
 																		<td>Введите ширину рулона </td>
-																		<td><input type="text" id="aroll" value="" placeholder="укажите ширину рулона"></td>
+																		<td><input type="text" id="aroll3" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите ширину рулона"></td>
 																	</tr>
 																	<tr>
 																		<td>Введите длину рулона </td>
-																		<td><input type="text" id="broll" value="" placeholder="укажите длину рулона"></td>
+																		<td><input type="text" id="broll3" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите длину рулона"></td>
 																	</tr>
 																	<tr>
 																		<td></td>
-																		<td><button onClick="raschitat();">Рассчитать</button></td>
+																		<td><button onClick="raschitat3();">Рассчитать</button></td>
 																	</tr>
 																	<tr>
-																		<td><div id="quantity"></div></td>
-																		<td><div id="val"></div></td>
+																		<td><div id="quantity3"></div></td>
+																		<td><div id="val3"></div></td>
 																	</tr>
 																</table>
-																<script src="calc.js"></script>
+																<script>
+																	function raschitat3() {
+																		let a3  = document.getElementById('a3').value;
+																		let b3 = document.getElementById('b3').value;
+																		let broll3  = document.getElementById('broll3').value;
+																		let aroll3 = document.getElementById('aroll3').value;
+																		if(a3 == ""){
+																			alert("Вы не указали ширину");
+																			} else if(b3 == ""){
+																				alert("Вы не указали длину");
+																				} else if (aroll3 == "") {
+																					alert("Вы не указали ширину рулона");
+																					} else if (broll3 == "") {
+																						alert("Вы не указали длину рулона");
+																						} else {
+																							let price3 = 225;
+																							let quantity3 = Math.ceil(((a3 / aroll3) * b3) / broll3);
+																							document.getElementById('quantity3').innerHTML = "Вам понадобится: "+ quantity3 + " рулонов обоев";
+
+																							let val3 = quantity3 * price3;
+																							document.getElementById('val3').innerHTML = "Стоимость равна: "+ val3 +" р.";
+																						}
+																	}
+																</script>
 															</div>
 														</div>
 													</div>
@@ -214,30 +307,53 @@
 															<table>
 																<tr>
 																	<td>Введите ширину стены </td>
-																	<td><input type="text" id="a" value="" placeholder="укажите ширину стен"></td>
+																	<td><input type="text" id="a4" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите ширину стен"></td>
 																</tr>
 																<tr>
 																	<td>Введите высоту стены </td>
-																	<td><input type="text" id="b" value="" placeholder="укажите высоту стен"></td>
+																	<td><input type="text" id="b4" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите высоту стен"></td>
 																</tr>
 																<tr>
 																	<td>Введите ширину рулона </td>
-																	<td><input type="text" id="aroll" value="" placeholder="укажите ширину рулона"></td>
+																	<td><input type="text" id="aroll4" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите ширину рулона"></td>
 																</tr>
 																<tr>
 																	<td>Введите длину рулона </td>
-																	<td><input type="text" id="broll" value="" placeholder="укажите длину рулона"></td>
+																	<td><input type="text" id="broll4" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите длину рулона"></td>
 																</tr>
 																<tr>
 																	<td></td>
-																	<td><button onClick="raschitat();">Рассчитать</button></td>
+																	<td><button onClick="raschitat4();">Рассчитать</button></td>
 																</tr>
 																<tr>
-																	<td><div id="quantity"></div></td>
-																	<td><div id="val"></div></td>
+																	<td><div id="quantity4"></div></td>
+																	<td><div id="val4"></div></td>
 																</tr>
 															</table>
-															<script src="calc.js"></script>
+															<script>
+																function raschitat4() {
+																		let a4  = document.getElementById('a4').value;
+																		let b4  = document.getElementById('b4').value;
+																		let broll4  = document.getElementById('broll4').value;
+																		let aroll4  = document.getElementById('aroll4').value;
+																		if(a4 == ""){
+																			alert("Вы не указали ширину");
+																			} else if(b4 == ""){
+																				alert("Вы не указали длину");
+																				} else if (aroll4 == "") {
+																					alert("Вы не указали ширину рулона");
+																					} else if (broll4 == "") {
+																						alert("Вы не указали длину рулона");
+																						} else {
+																							let price4 = 235;
+																							let quantity4 = Math.ceil(((a4 / aroll4) * b4) / broll4);
+																							document.getElementById('quantity4').innerHTML = "Вам понадобится: "+ quantity4 + " рулонов обоев";
+
+																							let val4 = quantity4 * price4;
+																							document.getElementById('val4').innerHTML = "Стоимость равна: "+ val4 + " р.";
+																						}
+																	}
+															</script>
 														</div>
 													</div>
 												</div>
@@ -254,30 +370,53 @@
 															<table>
 																<tr>
 																	<td>Введите ширину стены </td>
-																	<td><input type="text" id="a" value="" placeholder="укажите ширину стен"></td>
+																	<td><input type="text" id="a5" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите ширину стен"></td>
 																</tr>
 																<tr>
 																	<td>Введите высоту стены </td>
-																	<td><input type="text" id="b" value="" placeholder="укажите высоту стен"></td>
+																	<td><input type="text" id="b5" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите высоту стен"></td>
 																</tr>
 																<tr>
 																	<td>Введите ширину рулона </td>
-																	<td><input type="text" id="aroll" value="" placeholder="укажите ширину рулона"></td>
+																	<td><input type="text" id="aroll5" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите ширину рулона"></td>
 																</tr>
 																<tr>
 																	<td>Введите длину рулона </td>
-																	<td><input type="text" id="broll" value="" placeholder="укажите длину рулона"></td>
+																	<td><input type="text" id="broll5" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите длину рулона"></td>
 																</tr>
 																<tr>
 																	<td></td>
-																	<td><button onClick="raschitat();">Рассчитать</button></td>
+																	<td><button onClick="raschitat5();">Рассчитать</button></td>
 																</tr>
 																<tr>
-																	<td><div id="quantity"></div></td>
-																	<td><div id="val"></div></td>
+																	<td><div id="quantity5"></div></td>
+																	<td><div id="val5"></div></td>
 																</tr>
 															</table>
-															<script src="calc.js"></script>
+															<script>
+																function raschitat5() {
+																		let a5  = document.getElementById('a5').value;
+																		let b5  = document.getElementById('b5').value;
+																		let broll5  = document.getElementById('broll5').value;
+																		let aroll5 = document.getElementById('aroll5').value;
+																		if(a5 == ""){
+																			alert("Вы не указали ширину");
+																			} else if(b5 == ""){
+																				alert("Вы не указали длину");
+																				} else if (aroll5 == "") {
+																					alert("Вы не указали ширину рулона");
+																					} else if (broll5 == "") {
+																						alert("Вы не указали длину рулона");
+																						} else {
+																							let price5 = 210;
+																							let quantity5 = Math.ceil(((a5 / aroll5) * b5) / broll5);
+																							document.getElementById('quantity5').innerHTML = "Вам понадобится: "+ quantity5 + " рулонов обоев";
+
+																							let val5 = quantity5 * price5;
+																							document.getElementById('val5').innerHTML = "Стоимость равна: "+ val5 +" р.";
+																						}
+																	}
+															</script>
 														</div>
 													</div>
 												</div>
@@ -297,30 +436,53 @@
 																<table>
 																	<tr>
 																		<td>Введите ширину стены </td>
-																		<td><input type="text" id="a" value="" placeholder="укажите ширину стен"></td>
+																		<td><input type="text" id="a6" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите ширину стен"></td>
 																	</tr>
 																	<tr>
 																		<td>Введите высоту стены </td>
-																		<td><input type="text" id="b" value="" placeholder="укажите высоту стен"></td>
+																		<td><input type="text" id="b6" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите высоту стен"></td>
 																	</tr>
 																	<tr>
 																		<td>Введите ширину рулона </td>
-																		<td><input type="text" id="aroll" value="" placeholder="укажите ширину рулона"></td>
+																		<td><input type="text" id="aroll6" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите ширину рулона"></td>
 																	</tr>
 																	<tr>
 																		<td>Введите длину рулона </td>
-																		<td><input type="text" id="broll" value="" placeholder="укажите длину рулона"></td>
+																		<td><input type="text" id="broll6" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите длину рулона"></td>
 																	</tr>
 																	<tr>
 																		<td></td>
-																		<td><button onClick="raschitat();">Рассчитать</button></td>
+																		<td><button onClick="raschitat6();">Рассчитать</button></td>
 																	</tr>
 																	<tr>
-																		<td><div id="quantity"></div></td>
-																		<td><div id="val"></div></td>
+																		<td><div id="quantity6"></div></td>
+																		<td><div id="val6"></div></td>
 																	</tr>
 																</table>
-																<script src="calc.js"></script>
+																<script>
+																	function raschitat6() {
+																		let a6  = document.getElementById('a6').value;
+																		let b6  = document.getElementById('b6').value;
+																		let broll6  = document.getElementById('broll6').value;
+																		let aroll6 = document.getElementById('aroll6').value;
+																		if(a6 == ""){
+																			alert("Вы не указали ширину");
+																			} else if(b6 == ""){
+																				alert("Вы не указали длину");
+																				} else if (aroll6 == "") {
+																					alert("Вы не указали ширину рулона");
+																					} else if (broll6 == "") {
+																						alert("Вы не указали длину рулона");
+																						} else {
+																							let price6 = 210;
+																							let quantity6 = Math.ceil(((a6 / aroll6) * b6) / broll6);
+																							document.getElementById('quantity6').innerHTML = "Вам понадобится: "+ quantity6 + " рулонов обоев";
+
+																							let val6 = quantity6 * price6;
+																							document.getElementById('val6').innerHTML = "Стоимость равна: "+ val6 +" р.";
+																						}
+																	}
+																</script>
 															</div>
 														</div>
 													</div>
@@ -338,30 +500,53 @@
 															<table>
 																<tr>
 																	<td>Введите ширину стены </td>
-																	<td><input type="text" id="a" value="" placeholder="укажите ширину стен"></td>
+																	<td><input type="text" id="a7" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите ширину стен"></td>
 																</tr>
 																<tr>
 																	<td>Введите высоту стены </td>
-																	<td><input type="text" id="b" value="" placeholder="укажите высоту стен"></td>
+																	<td><input type="text" id="b7" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите высоту стен"></td>
 																</tr>
 																<tr>
 																	<td>Введите ширину рулона </td>
-																	<td><input type="text" id="aroll" value="" placeholder="укажите ширину рулона"></td>
+																	<td><input type="text" id="aroll7" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите ширину рулона"></td>
 																</tr>
 																<tr>
 																	<td>Введите длину рулона </td>
-																	<td><input type="text" id="broll" value="" placeholder="укажите длину рулона"></td>
+																	<td><input type="text" id="broll7" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите длину рулона"></td>
 																</tr>
 																<tr>
 																	<td></td>
-																	<td><button onClick="raschitat();">Рассчитать</button></td>
+																	<td><button onClick="raschitat7();">Рассчитать</button></td>
 																</tr>
 																<tr>
-																	<td><div id="quantity"></div></td>
-																	<td><div id="val"></div></td>
+																	<td><div id="quantity7"></div></td>
+																	<td><div id="val7"></div></td>
 																</tr>
 															</table>
-															<script src="calc.js"></script>
+															<script>
+																function raschitat7() {
+																		let a7  = document.getElementById('a7').value;
+																		let b7  = document.getElementById('b7').value;
+																		let broll7  = document.getElementById('broll7').value;
+																		let aroll7 = document.getElementById('aroll7').value;
+																		if(a7 == ""){
+																			alert("Вы не указали ширину");
+																			} else if(b7 == ""){
+																				alert("Вы не указали длину");
+																				} else if (aroll7 == "") {
+																					alert("Вы не указали ширину рулона");
+																					} else if (broll7 == "") {
+																						alert("Вы не указали длину рулона");
+																						} else {
+																							let price7 = 210;
+																							let quantity7 = Math.ceil(((a7 / aroll7) * b7) / broll7);
+																							document.getElementById('quantity7').innerHTML = "Вам понадобится: "+ quantity7 + " рулонов обоев";
+
+																							let val7 = quantity7 * price7;
+																							document.getElementById('val7').innerHTML = "Стоимость равна: "+ val7 +" р.";
+																						}
+																	}
+															</script>
 														</div>
 													</div>
 												</div>
@@ -378,30 +563,53 @@
 															<table>
 																<tr>
 																	<td>Введите ширину стены </td>
-																	<td><input type="text" id="a" value="" placeholder="укажите ширину стен"></td>
+																	<td><input type="text" id="a8" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите ширину стен"></td>
 																</tr>
 																<tr>
 																	<td>Введите высоту стены </td>
-																	<td><input type="text" id="b" value="" placeholder="укажите высоту стен"></td>
+																	<td><input type="text" id="b8" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите высоту стен"></td>
 																</tr>
 																<tr>
 																	<td>Введите ширину рулона </td>
-																	<td><input type="text" id="aroll" value="" placeholder="укажите ширину рулона"></td>
+																	<td><input type="text" id="aroll8" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите ширину рулона"></td>
 																</tr>
 																<tr>
 																	<td>Введите длину рулона </td>
-																	<td><input type="text" id="broll" value="" placeholder="укажите длину рулона"></td>
+																	<td><input type="text" id="broll8" onfocus="javascript:if(this.value='text') this.value=''" placeholder="укажите длину рулона"></td>
 																</tr>
 																<tr>
 																	<td></td>
-																	<td><button onClick="raschitat();">Рассчитать</button></td>
+																	<td><button onClick="raschitat8();">Рассчитать</button></td>
 																</tr>
 																<tr>
-																	<td><div id="quantity"></div></td>
-																	<td><div id="val"></div></td>
+																	<td><div id="quantity8"></div></td>
+																	<td><div id="val8"></div></td>
 																</tr>
 															</table>
-															<script src="calc.js"></script>
+															<script>
+																function raschitat8() {
+																		let a8  = document.getElementById('a8').value;
+																		let b8  = document.getElementById('b8').value;
+																		let broll8  = document.getElementById('broll8').value;
+																		let aroll8 = document.getElementById('aroll8').value;
+																		if(a8 == ""){
+																			alert("Вы не указали ширину");
+																			} else if(b8 == ""){
+																				alert("Вы не указали длину");
+																				} else if (aroll8 == "") {
+																					alert("Вы не указали ширину рулона");
+																					} else if (broll8 == "") {
+																						alert("Вы не указали длину рулона");
+																						} else {
+																							let price8 = 217;
+																							let quantity8 = Math.ceil(((a8 / aroll8) * b8) / broll8);
+																							document.getElementById('quantity8').innerHTML = "Вам понадобится: "+ quantity8 + " рулонов обоев";
+
+																							let val8 = quantity8 * price8;
+																							document.getElementById('val8').innerHTML = "Стоимость равна: "+ val8 +" р.";
+																						}
+																	}
+															</script>
 														</div>
 													</div>
 												</div>
